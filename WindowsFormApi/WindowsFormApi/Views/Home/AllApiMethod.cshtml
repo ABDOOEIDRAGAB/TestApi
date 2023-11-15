@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewData["Title"] = "AllApiMethod";
+}
+
+<a asp-action="Check" asp-controller="CheckAlls" class="btn btn-success"> Check All </a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col"> Name </th>
+            <th scope="col"> Type </th>
+            <th scope="col"> Check Box </th>
+            <th scope="col"> Apply </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row"> Category </th>
+            <td> Http GET </td>
+            <td>
+                <input class="form-check-input test" type="checkbox" value="" id="flexCheckChecked">
+            </td>
+            <td> 
+                <a asp-action="GetCategoriesData" asp-controller="Categories" class="btn btn-primary app">
+                    Verify
+                </a>
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row"> Retailer </th>
+            <td> Http GET </td>
+            <td>
+                <input class="form-check-input test2" type="checkbox" value="" id="flexCheckChecked">
+            </td>
+
+            <td>
+                <a asp-action="GetRetailsData" asp-controller="Retailers" asp-route-id="" class="btn btn-primary app2">
+                    Verify
+                </a>
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row"> Register </th>
+            <td> Http Post </td>
+            <td>
+                <input class="form-check-input test3" type="checkbox" value="" id="flexCheckChecked">
+            </td>
+
+            <td>
+                <a asp-action="RgisterDataGet" asp-controller="Registers" asp-route-id="" class="btn btn-primary app3">
+                    Verify
+                </a>
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row"> Login </th>
+            <td> Http Post </td>
+            <td>
+                <input class="form-check-input test4" type="checkbox" value="" id="flexCheckChecked">
+            </td>
+
+            <td>
+                <a asp-action="LoginDataGet" asp-controller="Logins" asp-route-id="" class="btn btn-primary app4">
+                    Verify
+                </a>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+
+@section Scripts{
+
+    <script>
+
+        $(function () {
+
+            $(".test").on("click", function () {
+                $(".app").toggle();
+            });
+            $(".test2").on("click", function () {
+                $(".app2").toggle();
+            });
+            $(".test3").on("click", function () {
+                $(".app3").toggle();
+            });
+            $(".test4").on("click", function () {
+                $(".app4").toggle();
+            });
+
+        });
+
+    </script>
+
+}
